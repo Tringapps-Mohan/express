@@ -4,9 +4,7 @@ const fetch = require('./fetch');
 
 app.use(express.static('./public'));
 
-app.use(fetch);
-
-app.get('/:api', (req, res) => {
+app.get('/:api', fetch, (req, res) => {
   res.status(200).json(res.data);
 });
 
